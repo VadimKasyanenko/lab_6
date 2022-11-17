@@ -1,11 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "letter.h"
+#include <QMessageBox>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -95,4 +98,25 @@ void MainWindow::on_pushButton_10_clicked()
 {
 
     ui->widget->colour=QColorDialog::getColor(Qt::black, this );;
+}
+
+/*virtual*/void MainWindow::keyPressEvent(QKeyEvent* pe) // нажатие определенной клавиши
+{
+    ui->widget->keyPressEvent(pe);
+
+   ui->widget->updateGL(); // обновление изображения
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+
+    QMessageBox::information(this,"Control keys","To interact with letter you can use your mosuse or keyboard \n \n "
+                                  "To zoom in press + \n \n"
+                                                 "To zoom out press - \n \n"
+                                                 "To rotate up press w \n \n"
+                                                 "To rotate down press s \n \n"
+                                                 "To rotate left press a \n \n"
+                                                 "To rotate right press d \n \n"
+                                                 "To translate down press z \n \n"
+                                                 "To translate up press x \n \n");
 }

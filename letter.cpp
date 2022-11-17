@@ -82,6 +82,17 @@ void letter::paintGL()
     draw_rotation_z();
     else if(check==9)
     drawFigure();
+    QFont tmpfont;
+            tmpfont.setFamily("Arial Black");
+            tmpfont.setPointSize(10);
+            tmpfont.setBold(false);
+            glColor3f(0,0,0);
+            renderText(10,0.0,0.0,"X",tmpfont);
+            glColor3f(0,0,0);
+            renderText(0.0,10,0.0,"Y",tmpfont);
+            glColor3f(0,0,0);
+            renderText(0.0,0.0,10,"Z",tmpfont);
+
 }
 
 /*virtual*/void letter::mousePressEvent(QMouseEvent* pe) // нажатие клавиши мыши
@@ -129,19 +140,19 @@ void letter::paintGL()
          scale_minus();    // удалиться от сцены
       break;
 
-      case Qt::Key_Up:
+      case Qt::Key_W:
          rotate_up();      // повернуть сцену вверх
       break;
 
-      case Qt::Key_Down:
+      case Qt::Key_S:
          rotate_down();    // повернуть сцену вниз
       break;
 
-      case Qt::Key_Left:
+      case Qt::Key_A:
         rotate_left();     // повернуть сцену влево
       break;
 
-      case Qt::Key_Right:
+      case Qt::Key_D:
          rotate_right();   // повернуть сцену вправо
       break;
 
