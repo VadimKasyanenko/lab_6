@@ -2,7 +2,7 @@
 #define LETTER_H
 
 #include <QMainWindow >
-#include <QtWidgets/QWidget>
+
 #include <QtOpenGL>
 #include <QOpenGLFunctions>
 #include <GL/gl.h>
